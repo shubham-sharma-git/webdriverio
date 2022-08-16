@@ -30,7 +30,7 @@ exports.config = {
 
 
     specs: [
-        './test/specs/signup_setmore.js',
+        './test/specs/login_po.js',
         // './test/specs/**/*.js'
     ],
     // Patterns to exclude.

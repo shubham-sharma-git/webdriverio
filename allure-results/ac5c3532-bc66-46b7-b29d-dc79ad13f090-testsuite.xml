@@ -1,0 +1,54 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1660371795682' stop='1660371796593'>
+    <name>Customer Page tese cases</name>
+    <title>Customer Page tese cases</title>
+    <test-cases>
+        <test-case start='1660371795682' status='broken' stop='1660371796592'>
+            <name>Create new customer</name>
+            <title>Create new customer</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-104.0.5112.79'/>
+            </parameters>
+            <steps>
+                <step start='1660371795688' status='broken' stop='1660371796592'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='80f06451-953c-41d0-9036-bb114a91ce41-attachment.json' type='application/json' size='59'/>
+                    </attachments>
+                    <steps>
+                        <step start='1660371795740' status='passed' stop='1660371795898'>
+                            <name>POST /session/:sessionId/element</name>
+                            <title>POST /session/:sessionId/element</title>
+                            <attachments>
+                                <attachment title='Request' source='ca1b8935-2232-4974-ae56-1c994ef0b91c-attachment.json' type='application/json' size='53'/>
+                                <attachment title='Response' source='f72b19e5-e623-42ab-8bc0-1e04792febab-attachment.json' type='application/json' size='1941'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                        <step start='1660371795927' status='passed' stop='1660371796589'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments>
+                                <attachment title='Screenshot' source='6f7d39a0-6f7b-46cf-b645-b535415b61aa-attachment.png' type='image/png' size='15352'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>LoginPage.Login(...) is not a function</message>
+                <stack-trace>TypeError: LoginPage.Login(...) is not a function
+                    at Context.&lt;anonymous> (/Users/mrhacksaw/Documents/Learning/WebDriverIO/test/specs/customerPage_test.js:7:13)
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

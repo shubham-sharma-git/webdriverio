@@ -15,7 +15,7 @@ describe("Setmore services testing", async () => {
         await browser.url("")
         await LoginPage.Login("shubham.sharma80048@gmail.com", "a12345678")
         await ServicePage.AddPrivateService("auto_private_service", 20)
-        await browser.pause(5000)
+        // await browser.pause(5000)
         await LoginPage.Logout()
     })
 })

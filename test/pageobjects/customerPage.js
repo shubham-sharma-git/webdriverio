@@ -21,10 +21,21 @@ class CustomerPage {
         return $("#addnewCustomer")
     }
 
+    get customerSearch() {
+        return $("#searchCustomer")
+    }
+
+    get allCustomers() {
+        return $("#customerList li")
+    }
 
     async AddCustomer(name, email) {
 
+        // await this.addNewCustomer.waitForDisplayed({ reverse: false, timeout: 30000 });
+
+
         await this.addNewCustomer.click()
+        await $("#addnewCustomerPopup").waitForDisplayed(5000)
         await this.name.setValue(name)
         await this.email.setValue(email)
         await this.addCustomerBtn.click()

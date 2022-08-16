@@ -24,6 +24,14 @@ class LoginPage {
         return $("#signup-btn")
     }
 
+    get userAccountLink() {
+        return $("#account_menu")
+    }
+
+    get accountUserName() {
+        return $("(//h3[@class='nav-dropdown-desc-header'])[1]")
+    }
+
 
 
     async Login(userEmail, password) {
