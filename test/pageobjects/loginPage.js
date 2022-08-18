@@ -35,6 +35,10 @@ class LoginPage {
 
 
     async Login(userEmail, password) {
+        await browser.waitUntil(async () => { return await this.email.isDisplayed() === true }, {
+            timeout: 30000,
+            timeoutMsg: 'Element not displayed'
+        })
         await this.email.setValue(userEmail)
         await this.password.setValue(password)
         await this.loginButton.click()
