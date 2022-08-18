@@ -33,6 +33,14 @@ class CustomerPage {
         return $("#customerList")
     }
 
+    get deleteCustomerBtn() {
+        return $("#deleteCustomerIcon")
+    }
+
+    get deleteConfrmBtn() {
+        return $("#delete-confirmation-btn")
+    }
+
     async AddCustomer(name, email) {
 
         await this.customerPageLink.click()

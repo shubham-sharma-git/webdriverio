@@ -28,6 +28,11 @@ class StaffPage {
         await this.addStaffBtn.click()
     }
 
+    async DeleteStaff(staff_name) {
+        await this.settingBtn.click()
+
+    }
+
 
 }
 
