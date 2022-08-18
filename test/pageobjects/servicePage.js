@@ -48,6 +48,10 @@ class ServicePage {
         return $("#delete-confirmation-btn")
     }
 
+    get allServices() {
+        return $("#servicesList")
+    }
+
     async AddService(service_name, service_duration) {
         await this.settingButton.click()
         await this.serviceTab.click()
@@ -75,14 +79,14 @@ class ServicePage {
     async DeleteService(name) {
         await this.settingButton.click()
         await this.serviceTab.click()
-        for (i = 0; i < this.allServicesList.length; i++) {
+        for (i = 0; i < await this.allServicesList.length; i++) {
             if (await this.allServicesList[i].getText() === name) {
                 await this.allServicesList[i].click()
             }
 
             await this.deleteServieButton.click()
             await this.finalDeleteButton.click()
-            await browser.waitUntil(() => { await $("#voice-box").getText() === "Service deleted." }, 5000)
+            await browser.waitUntil(async () => { await $("#voice-box").getText() === "Service deleted." }, 5000)
 
         }
     }

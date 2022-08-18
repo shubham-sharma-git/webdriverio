@@ -49,5 +49,4 @@ class CustomerPage {
     }
 }
 
-
 module.exports = new CustomerPage()
