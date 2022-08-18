@@ -36,6 +36,18 @@ class ServicePage {
         return $("#saveNewService")
     }
 
+    get allServicesList() {
+        return $$(".service-header")
+    }
+
+    get deleteServieButton() {
+        return $("//button[@class='pull-right btn new-serive-dele-btn']")
+    }
+
+    get finalDeleteButton() {
+        return $("#delete-confirmation-btn")
+    }
+
     async AddService(service_name, service_duration) {
         await this.settingButton.click()
         await this.serviceTab.click()
@@ -58,6 +70,21 @@ class ServicePage {
         await this.allStaffToggle.click()
         await this.allStaffToggle.waitForEnabled()
         await this.saveServieButton.click()
+    }
+
+    async DeleteService(name) {
+        await this.settingButton.click()
+        await this.serviceTab.click()
+        for (i = 0; i < this.allServicesList.length; i++) {
+            if (await this.allServicesList[i].getText() === name) {
+                await this.allServicesList[i].click()
+            }
+
+            await this.deleteServieButton.click()
+            await this.finalDeleteButton.click()
+            await browser.waitUntil(() => { await $("#voice-box").getText() === "Service deleted." }, 5000)
+
+        }
     }
 
 }

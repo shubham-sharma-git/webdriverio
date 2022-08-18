@@ -26,19 +26,25 @@ class CustomerPage {
     }
 
     get allCustomers() {
-        return $("#customerList li")
+        return $$("#customerList li")
+    }
+
+    get allContactList() {
+        return $("#customerList")
     }
 
     async AddCustomer(name, email) {
 
-        // await this.addNewCustomer.waitForDisplayed({ reverse: false, timeout: 30000 });
-
-
+        await this.customerPageLink.click()
+        await browser.waitUntil(async () => { return await this.allContactList.isDisplayed() === true }, {
+            timeout: 30000,
+            timeoutMsg: 'Timeout Service page'
+        })
         await this.addNewCustomer.click()
-        await $("#addnewCustomerPopup").waitForDisplayed(5000)
         await this.name.setValue(name)
         await this.email.setValue(email)
         await this.addCustomerBtn.click()
+
 
     }
 }

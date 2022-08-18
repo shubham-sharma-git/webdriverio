@@ -24,8 +24,7 @@ describe("login on setmore using page object method- smoke", async () => {
             await expect(AccountName).toHaveText("shubham.sharma80048@gmail.com")
 
 
-            // await $("#addnewCustomerPopup").waitForDisplayed(5000)
-
+            await $("#addnewCustomerPopup").waitForDisplayed(5000)
 
             await CustomerPage.customerPageLink.click()
             // await browser.pause(2000)
