@@ -9,21 +9,19 @@ describe("setmore staff tab testing", async () => {
     staffdata.forEach(({ name, email }) => {
 
 
-        xit("adding new staff- smoke", async () => {
+        it("adding new staff", async () => {
             await browser.url("")
-
             await LoginPage.Login("shubham.sharma80048@gmail.com", "a12345678")
-
             await StaffPage.AddStaff(name, email)
-
-            await browser.pause(2000)
-
             await LoginPage.Logout()
 
 
         })
         xit("Deleting staff", async () => {
             await browser.url("")
+            await LoginPage.Login("shubham.sharma80048@gmail.com", "a12345678")
+            await StaffPage.DeleteStaff("new")
+            await LoginPage.Logout()
 
         })
     });
