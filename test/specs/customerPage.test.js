@@ -14,7 +14,7 @@ describe("Customer Page tese cases", async () => {
 
     })
 
-    it("Detele a customer with provided name", async () => {
+    itx("Detele a customer with provided name", async () => {
         await browser.url("")
         await LoginPage.Login("shubham.sharma80048@gmail.com", "a12345678")
         await CustomerPAGE.customerPageLink.click()
@@ -23,13 +23,17 @@ describe("Customer Page tese cases", async () => {
             timeoutMsg: 'Timeout Service page'
         })
         for (i = 0; i < await CustomerPAGE.allCustomers.length; i++) {
-            if (await CustomerPAGE.allCustomers[i].getText() === "kkk") {
+            if (await CustomerPAGE.allCustomers[i].getText() === "hacksaw") {
                 await CustomerPAGE.allCustomers[i].scrollIntoView()
                 await CustomerPAGE.allCustomers[i].click()
                 await CustomerPAGE.deleteCustomerBtn.click()
                 await CustomerPAGE.deleteConfrmBtn.click()
             }
         }
+        await CustomerPAGE.customerSearch.setValue("hacksaw")
+        let nocustomer = await $("#noCustomer span")
+        await nocustomer.waitForDisplayed(10000)
+        await expect(nocustomer).toHaveText("We're sorry, no customer was found.")
 
     })
 

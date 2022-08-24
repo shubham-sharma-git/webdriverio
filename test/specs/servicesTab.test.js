@@ -32,12 +32,12 @@ describe("Setmore services testing", async () => {
         })
         for (i = 0; i < await ServicePage.allServicesList.length; i++) {
             console.log("the name of first service is: ", await ServicePage.allServicesList[i].getText())
-            if (await ServicePage.allServicesList[i].getText() === "zoom service") {
+            if (await ServicePage.allServicesList[i].getText() === "abc") {
                 await ServicePage.allServicesList[i].click()
                 await ServicePage.deleteServieButton.click()
                 await ServicePage.finalDeleteButton.click()
             }
-            await browser.pause(3000)
+
         }
 
         await LoginPage.Logout()

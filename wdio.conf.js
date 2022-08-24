@@ -30,7 +30,7 @@ exports.config = {
 
 
     specs: [
-        './test/specs/staffTab.test.js',
+        './test/specs/servicesTab.test.js',
         // './test/specs/**/*.js'
     ],
     // Patterns to exclude.
